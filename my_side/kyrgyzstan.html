@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Kyrgyzstan</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 50px;
+        }
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .navbar-menu a:hover {
+            color: #e0e0e0;
+        }
+        .language-selector {
+            display: flex;
+            gap: 10px;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Kyrgyzstan.svg/1200px-Flag_of_Kyrgyzstan.svg.png');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .sections {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+        }
+        .section {
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">Кыргызстан</div>
+        <div class="navbar-menu" id="menu">
+            <a href="#home">Главная</a>
+            <a href="#culture">Культура</a>
+            <a href="#nature">Природа</a>
+        </div>
+        <div class="language-selector">
+            <button onclick="changeLanguage('ru')">Рус</button>
+            <button onclick="changeLanguage('en')">Eng</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1 id="hero-title">Добро пожаловать в Кыргызстан!</h1>
+        <p id="hero-subtitle">Страна гор, кочевников и невероятной красоты</p>
+    </section>
+
+    <section class="sections">
+        <div class="section" id="culture-section">
+            <h2>Культура</h2>
+            <p>Богатое культурное наследие кочевых народов</p>
+        </div>
+        <div class="section" id="nature-section">
+            <h2>Природа</h2>
+            <p>Захватывающие горные пейзажи Тянь-Шаня</p>
+        </div>
+        <div class="section" id="traditions-section">
+            <h2>Традиции</h2>
+            <p>Уникальные обычаи и гостеприимство</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2024 Discover Kyrgyzstan
+    </footer>
+
+    <script>
+        const translations = {
+            ru: {
+                'hero-title': 'Добро пожаловать в Кыргызстан!',
+                'hero-subtitle': 'Страна гор, кочевников и невероятной красоты',
+                'culture-section': {
+                    title: 'Культура',
+                    description: 'Богатое культурное наследие кочевых народов'
+                },
+                'nature-section': {
+                    title: 'Природа',
+                    description: 'Захватывающие горные пейзажи Тянь-Шаня'
+                },
+                'traditions-section': {
+                    title: 'Традиции',
+                    description: 'Уникальные обычаи и гостеприимство'
+                }
+            },
+            en: {
+                'hero-title': 'Welcome to Kyrgyzstan!',
+                'hero-subtitle': 'Land of mountains, nomads, and incredible beauty',
+                'culture-section': {
+                    title: 'Culture',
+                    description: 'Rich cultural heritage of nomadic peoples'
+                },
+                'nature-section': {
+                    title: 'Nature',
+                    description: 'Breathtaking mountain landscapes of Tian Shan'
+                },
+                'traditions-section': {
+                    title: 'Traditions',
+                    description: 'Unique customs and hospitality'
+                }
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById('hero-title').textContent = translations[lang]['hero-title'];
+            document.getElementById('hero-subtitle').textContent = translations[lang]['hero-subtitle'];
+            
+            const sections = ['culture', 'nature', 'traditions'];
+            sections.forEach(section => {
+                document.querySelector(`#${section}-section h2`).textContent = translations[lang][`${section}-section`].title;
+                document.querySelector(`#${section}-section p`).textContent = translations[lang][`${section}-section`].description;
+            });
+        }
+    </script>
+</body>
+</html>

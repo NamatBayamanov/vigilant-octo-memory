@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover USA Attractions</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #3498db;
+        }
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+        .active-page {
+            display: block;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .section-title {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .attraction-card {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .attraction-card img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .attraction-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>Attractions of USA</div>
+        <div>
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('national-parks')">National Parks</a>
+            <a href="#" onclick="showPage('cities')">Famous Cities</a>
+            <a href="#" onclick="showPage('landmarks')">Landmarks</a>
+        </div>
+    </nav>
+
+    <div id="home" class="page active-page hero">
+        <h1>Discover the United States</h1>
+        <p>A Journey Through Amazing Attractions</p>
+    </div>
+
+    <div id="national-parks" class="page">
+        <h2 class="section-title">National Parks of the USA</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Grand_Canyon_National_Park_-_Sunset_at_Hopi_Point_2013.jpg/1280px-Grand_Canyon_National_Park_-_Sunset_at_Hopi_Point_2013.jpg" alt="Grand Canyon">
+                <h3>Grand Canyon</h3>
+                <p>Arizona's Iconic Natural Wonder</p>
+            </div>
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Yellowstone_National_Park_Mammoth_Hot_Springs.jpg/1280px-Yellowstone_National_Park_Mammoth_Hot_Springs.jpg" alt="Yellowstone">
+                <h3>Yellowstone</h3>
+                <p>World's First National Park</p>
+            </div>
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Yosemite_Valley_View%2C_Yosemite_NP.jpg/1280px-Yosemite_Valley_View%2C_Yosemite_NP.jpg" alt="Yosemite">
+                <h3>Yosemite</h3>
+                <p>California's Mountain Paradise</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cities" class="page">
+        <h2 class="section-title">Famous American Cities</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_zoomed.jpg/1280px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_zoomed.jpg" alt="New York">
+                <h3>New York City</h3>
+                <p>The City That Never Sleeps</p>
+            </div>
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Downtown_Las_Vegas_2011.jpg/1280px-Downtown_Las_Vegas_2011.jpg" alt="Las Vegas">
+                <h3>Las Vegas</h3>
+                <p>Entertainment Capital of the World</p>
+            </div>
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/San_Francisco_from_the_Marin_Headlands_in_March_2019.jpg/1280px-San_Francisco_from_the_Marin_Headlands_in_March_2019.jpg" alt="San Francisco">
+                <h3>San Francisco</h3>
+                <p>California's Tech and Culture Hub</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="landmarks" class="page">
+        <h2 class="section-title">Iconic American Landmarks</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Golden_Gate_Bridge_9285465845_9ddc069b63_k.jpg/1280px-Golden_Gate_Bridge_9285465845_9ddc069b63_k.jpg" alt="Golden Gate Bridge">
+                <h3>Golden Gate Bridge</h3>
+                <p>San Francisco's Famous Bridge</p>
+            </div>
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Statue_of_Liberty_7.jpg/1280px-Statue_of_Liberty_7.jpg" alt="Statue of Liberty">
+                <h3>Statue of Liberty</h3>
+                <p>Symbol of Freedom in New York</p>
+            </div>
+            <div class="attraction-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rushmore_09_2005.jpg/1280px-Rushmore_09_2005.jpg" alt="Mount Rushmore">
+                <h3>Mount Rushmore</h3>
+                <p>Presidential Memorial in South Dakota</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active-page'));
+            document.getElementById(pageId).classList.add('active-page');
+        }
+    </script>
+</body>
+</html>

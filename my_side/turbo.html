@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Landing Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f4f4f4;
+        }
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 600px;
+            padding: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #667eea;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.1);
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: white;
+        }
+        .feature {
+            text-align: center;
+            max-width: 300px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Our Creative Studio</h1>
+            <p>We design amazing digital experiences that transform your business</p>
+            <a href="#features" class="cta-button">Explore Our Work</a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="feature">
+            <h2>Web Design</h2>
+            <p>Stunning, responsive websites that captivate your audience</p>
+        </div>
+        <div class="feature">
+            <h2>Branding</h2>
+            <p>Unique brand identities that stand out in the digital landscape</p>
+        </div>
+        <div class="feature">
+            <h2>Digital Marketing</h2>
+            <p>Strategic campaigns that drive growth and engagement</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Creative Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#features').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        window.addEventListener('scroll', function() {
+            const features = document.querySelectorAll('.feature');
+            features.forEach(feature => {
+                const rect = feature.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75) {
+                    feature.style.opacity = 1;
+                    feature.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

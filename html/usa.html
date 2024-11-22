@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Discover USA Attractions</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div id="site-title">Attractions of USA</div>
+        <div>
+            <a href="#" onclick="showPage('home')" id="nav-home">Home</a>
+            <a href="#" onclick="showPage('national-parks')" id="nav-parks">National Parks</a>
+            <a href="#" onclick="showPage('cities')" id="nav-cities">Famous Cities</a>
+            <a href="#" onclick="showPage('landmarks')" id="nav-landmarks">Landmarks</a>
+        </div>
+        <div class="language-buttons">
+            <button class="language-btn" onclick="changeLanguage('en')">English</button>
+            <button class="language-btn" onclick="changeLanguage('ru')">Русский</button>
+        </div>
+    </nav>
+
+    <div id="home" class="page active-page hero">
+        <h1 id="hero-title">Discover the United States</h1>
+        <p id="hero-subtitle">A Journey Through Amazing Attractions</p>
+    </div>
+
+    <div id="national-parks" class="page">
+        <h2 class="section-title" id="parks-title">National Parks of the USA</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="/img/Get-to-Know-the-Grand-Canyon-Secrets-and-the-Hidden-Waterfall.webp" alt="Grand Canyon">
+                <h3 id="grand-canyon-title">Grand Canyon</h3>
+                <p id="grand-canyon-desc">Arizona's Iconic Natural Wonder</p>
+            </div>
+            <div class="attraction-card">
+                <img src="/img/Yellowstone.jpg" alt="Yellowstone">
+                <h3 id="yellowstone-title">Yellowstone</h3>
+                <p id="yellowstone-desc">World's First National Park</p>
+            </div>
+            <div class="attraction-card">
+                <img src="/img/yosemite-vally-at-california (1).jpg">
+                <h3 id="yosemite-title">Yosemite</h3>
+                <p id="yosemite-desc">California's Mountain Paradise</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="cities" class="page">
+        <h2 class="section-title" id="cities-title">Famous American Cities</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="/img/New_york_times_square-terabass.jpg" alt="New York">
+                <h3 id="nyc-title">New York City</h3>
+                <p id="nyc-desc">The City That Never Sleeps</p>
+            </div>
+            <div class="attraction-card">
+                <img src="/img/images (3).jpeg" alt="Las Vegas">
+                <h3 id="vegas-title">Las Vegas</h3>
+                <p id="vegas-desc">Entertainment Capital of the World</p>
+            </div>
+            <div class="attraction-card">
+                <img src="/img/san-francisco_GettyImages-600366840.webp" alt="San Francisco">
+                <h3 id="sf-title">San Francisco</h3>
+                <p id="sf-desc">California's Tech and Culture Hub</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="landmarks" class="page">
+        <h2 class="section-title" id="landmarks-title">Iconic American Landmarks</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <img src="/img/images.jpeg" alt="Golden Gate Bridge">
+                <h3 id="goldengate-title">Golden Gate Bridge</h3>
+                <p id="goldengate-desc">San Francisco's Famous Bridge</p>
+            </div>
+            <div class="attraction-card">
+                <img src="/img/images (1).jpeg" alt="Statue of Liberty">
+                <h3 id="liberty-title">Statue of Liberty</h3>
+                <p id="liberty-desc">Symbol of Freedom in New York</p>
+            </div>
+            <div class="attraction-card">
+                <img src="/img/images (2).jpeg" alt="Mount Rushmore">
+                <h3 id="rushmore-title">Mount Rushmore</h3>
+                <p id="rushmore-desc">Presidential Memorial in South Dakota</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
